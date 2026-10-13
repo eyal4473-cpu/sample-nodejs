@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/EladAviczer/sample-nodejs.git
+    repoURL: https://github.com/eyal4473-cpu/sample-nodejs.git
     targetRevision: main
     path: chart/sample-nodejs
   destination:
