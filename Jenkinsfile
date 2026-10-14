@@ -17,7 +17,8 @@ pipeline {
             steps {
                 sh '''
                     python3 -m pip install --user semgrep
-                    python3 -m semgrep scan --config p/javascript --severity ERROR --error --metrics=off app.js
+                    export PATH="$HOME/.local/bin:$PATH"
+                    semgrep scan --config p/javascript --severity ERROR --error --metrics=off app.js
                 '''
             }
         }
