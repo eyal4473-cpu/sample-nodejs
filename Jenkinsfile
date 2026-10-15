@@ -49,7 +49,7 @@ pipeline {
         }
 
         stage('Push') {
-            when { branch 'main' }
+            when expression { env.GIT_BRANCH == 'origin/main' }
             steps {
                 withCredentials([string(credentialsId: 'ghcr-token', variable: 'GHCR_TOKEN')]) {
                     sh '''
