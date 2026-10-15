@@ -2,7 +2,7 @@ replicaCount: 4
 
 image:
   repository: ghcr.io/eyal4473-cpu/sample-nodejs
-  tag: "1.0.5"
+  tag: "1.0.6"
   pullPolicy: IfNotPresent
 
 service:
