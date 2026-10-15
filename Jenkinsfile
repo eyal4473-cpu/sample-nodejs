@@ -49,8 +49,10 @@ pipeline {
         }
 
         stage('Push') {
-            when expression { env.GIT_BRANCH == 'origin/main' }
-            steps {
+        when {
+                expression { env.GIT_BRANCH == 'origin/main' }
+        }            
+        steps {
                 withCredentials([string(credentialsId: 'ghcr-token', variable: 'GHCR_TOKEN')]) {
                     sh '''
                         echo "$GHCR_TOKEN" | docker login ghcr.io -u eyal4473-cpu --password-stdin
